@@ -16,6 +16,17 @@
 		B527CE2216FDE50800DAC626 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B527CE2116FDE50800DAC626 /* Default.png */; };
 		B527CE2416FDE50800DAC626 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B527CE2316FDE50800DAC626 /* Default@2x.png */; };
 		B527CE2616FDE50800DAC626 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B527CE2516FDE50800DAC626 /* Default-568h@2x.png */; };
+		B527CE2E16FDE52E00DAC626 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B527CE2D16FDE52E00DAC626 /* CameraViewController.m */; };
+		B527CE3116FDE54600DAC626 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B527CE3016FDE54600DAC626 /* OverlayView.m */; };
+		B527CE3416FDE55A00DAC626 /* SizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B527CE3316FDE55A00DAC626 /* SizeViewController.m */; };
+		B527CE3716FDE56E00DAC626 /* SizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B527CE3616FDE56E00DAC626 /* SizeView.m */; };
+		B527CE3B16FDE5FE00DAC626 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527CE3A16FDE5FE00DAC626 /* QuartzCore.framework */; };
+		B527CE4716FE020E00DAC626 /* take_picture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B527CE4216FE020E00DAC626 /* take_picture@2x.png */; };
+		B527CE4C16FE027300DAC626 /* flash01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B527CE4816FE027300DAC626 /* flash01@2x.png */; };
+		B527CE4D16FE027300DAC626 /* flash02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B527CE4916FE027300DAC626 /* flash02@2x.png */; };
+		B527CE4E16FE027300DAC626 /* flash03@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = B527CE4A16FE027300DAC626 /* flash03@2x.tiff */; };
+		B527CE4F16FE027300DAC626 /* switch_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B527CE4B16FE027300DAC626 /* switch_button@2x.png */; };
+		B527CE5116FE059000DAC626 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527CE5016FE059000DAC626 /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +43,21 @@
 		B527CE2116FDE50800DAC626 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B527CE2316FDE50800DAC626 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B527CE2516FDE50800DAC626 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B527CE2C16FDE52E00DAC626 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		B527CE2D16FDE52E00DAC626 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		B527CE2F16FDE54600DAC626 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
+		B527CE3016FDE54600DAC626 /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
+		B527CE3216FDE55A00DAC626 /* SizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeViewController.h; sourceTree = "<group>"; };
+		B527CE3316FDE55A00DAC626 /* SizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeViewController.m; sourceTree = "<group>"; };
+		B527CE3516FDE56E00DAC626 /* SizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeView.h; sourceTree = "<group>"; };
+		B527CE3616FDE56E00DAC626 /* SizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeView.m; sourceTree = "<group>"; };
+		B527CE3A16FDE5FE00DAC626 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B527CE4216FE020E00DAC626 /* take_picture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "take_picture@2x.png"; sourceTree = "<group>"; };
+		B527CE4816FE027300DAC626 /* flash01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash01@2x.png"; sourceTree = "<group>"; };
+		B527CE4916FE027300DAC626 /* flash02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash02@2x.png"; sourceTree = "<group>"; };
+		B527CE4A16FE027300DAC626 /* flash03@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "flash03@2x.tiff"; sourceTree = "<group>"; };
+		B527CE4B16FE027300DAC626 /* switch_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch_button@2x.png"; sourceTree = "<group>"; };
+		B527CE5016FE059000DAC626 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B527CE5116FE059000DAC626 /* AssetsLibrary.framework in Frameworks */,
+				B527CE3B16FDE5FE00DAC626 /* QuartzCore.framework in Frameworks */,
 				B527CE1016FDE50800DAC626 /* UIKit.framework in Frameworks */,
 				B527CE1216FDE50800DAC626 /* Foundation.framework in Frameworks */,
 				B527CE1416FDE50800DAC626 /* CoreGraphics.framework in Frameworks */,
@@ -68,6 +96,8 @@
 		B527CE0E16FDE50800DAC626 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B527CE5016FE059000DAC626 /* AssetsLibrary.framework */,
+				B527CE3A16FDE5FE00DAC626 /* QuartzCore.framework */,
 				B527CE0F16FDE50800DAC626 /* UIKit.framework */,
 				B527CE1116FDE50800DAC626 /* Foundation.framework */,
 				B527CE1316FDE50800DAC626 /* CoreGraphics.framework */,
@@ -80,6 +110,14 @@
 			children = (
 				B527CE1E16FDE50800DAC626 /* AppDelegate.h */,
 				B527CE1F16FDE50800DAC626 /* AppDelegate.m */,
+				B527CE2C16FDE52E00DAC626 /* CameraViewController.h */,
+				B527CE2D16FDE52E00DAC626 /* CameraViewController.m */,
+				B527CE2F16FDE54600DAC626 /* OverlayView.h */,
+				B527CE3016FDE54600DAC626 /* OverlayView.m */,
+				B527CE3216FDE55A00DAC626 /* SizeViewController.h */,
+				B527CE3316FDE55A00DAC626 /* SizeViewController.m */,
+				B527CE3516FDE56E00DAC626 /* SizeView.h */,
+				B527CE3616FDE56E00DAC626 /* SizeView.m */,
 				B527CE1616FDE50800DAC626 /* Supporting Files */,
 			);
 			path = Sizer;
@@ -88,6 +126,11 @@
 		B527CE1616FDE50800DAC626 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B527CE4816FE027300DAC626 /* flash01@2x.png */,
+				B527CE4916FE027300DAC626 /* flash02@2x.png */,
+				B527CE4A16FE027300DAC626 /* flash03@2x.tiff */,
+				B527CE4B16FE027300DAC626 /* switch_button@2x.png */,
+				B527CE4216FE020E00DAC626 /* take_picture@2x.png */,
 				B527CE1716FDE50800DAC626 /* Sizer-Info.plist */,
 				B527CE1816FDE50800DAC626 /* InfoPlist.strings */,
 				B527CE1B16FDE50800DAC626 /* main.m */,
@@ -154,6 +197,11 @@
 				B527CE2216FDE50800DAC626 /* Default.png in Resources */,
 				B527CE2416FDE50800DAC626 /* Default@2x.png in Resources */,
 				B527CE2616FDE50800DAC626 /* Default-568h@2x.png in Resources */,
+				B527CE4716FE020E00DAC626 /* take_picture@2x.png in Resources */,
+				B527CE4C16FE027300DAC626 /* flash01@2x.png in Resources */,
+				B527CE4D16FE027300DAC626 /* flash02@2x.png in Resources */,
+				B527CE4E16FE027300DAC626 /* flash03@2x.tiff in Resources */,
+				B527CE4F16FE027300DAC626 /* switch_button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +214,10 @@
 			files = (
 				B527CE1C16FDE50800DAC626 /* main.m in Sources */,
 				B527CE2016FDE50800DAC626 /* AppDelegate.m in Sources */,
+				B527CE2E16FDE52E00DAC626 /* CameraViewController.m in Sources */,
+				B527CE3116FDE54600DAC626 /* OverlayView.m in Sources */,
+				B527CE3416FDE55A00DAC626 /* SizeViewController.m in Sources */,
+				B527CE3716FDE56E00DAC626 /* SizeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
