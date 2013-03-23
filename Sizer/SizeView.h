@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "SizeViewController.h"
 
-@interface SizeView : UIView 
-
-@property (nonatomic,weak) SizeViewController *delegate;
+@interface SizeView : UIView
 
 - (id) initWithFrame: (CGRect)frame controller: (SizeViewController *)c;
+
+@property (nonatomic, weak) SizeViewController *delegate;
+@property (nonatomic, strong) UIButton *small;
+@property (nonatomic, strong) UIButton *medium;
+@property (nonatomic, strong) UIButton *large;
 
 @end

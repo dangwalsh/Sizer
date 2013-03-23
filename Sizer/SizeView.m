@@ -18,6 +18,29 @@
         self.backgroundColor = [UIColor blueColor];
         self.userInteractionEnabled = YES;
         self.delegate = c;
+        
+        CGSize s = CGSizeMake(100, 50);
+        CGRect f1 = CGRectMake((frame.size.width - s.width) / 2,
+                               (frame.size.height - s.height) / 4,
+                               s.width,
+                               s.height);
+        self.small = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        self.small.frame = f1;
+        [self addSubview:self.small];
+        CGRect f2 = CGRectMake((frame.size.width - s.width) / 2,
+                               ((frame.size.height - s.height) / 4) * 2,
+                               s.width,
+                               s.height);
+        self.medium = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        self.medium.frame = f2;
+        [self addSubview:self.medium];
+        CGRect f3 = CGRectMake((frame.size.width - s.width) / 2,
+                               ((frame.size.height - s.height) / 4) * 3,
+                               s.width,
+                               s.height);
+        self.large = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        self.large.frame = f3;
+        [self addSubview:self.large];
     }
     return self;
 }
