@@ -87,7 +87,7 @@
 {
     self.pictureButton.enabled = NO;
     [self.delegate takePicture];
-    [self.delegate hideCamera];
+    //[self.delegate sizeImage];
     //SizeView *sv = [[SizeView alloc] initWithFrame:self.bounds];
     //[self addSubview:sv];
 }

@@ -18,7 +18,6 @@
 		B527CE2616FDE50800DAC626 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B527CE2516FDE50800DAC626 /* Default-568h@2x.png */; };
 		B527CE2E16FDE52E00DAC626 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B527CE2D16FDE52E00DAC626 /* CameraViewController.m */; };
 		B527CE3116FDE54600DAC626 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B527CE3016FDE54600DAC626 /* OverlayView.m */; };
-		B527CE3416FDE55A00DAC626 /* SizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B527CE3316FDE55A00DAC626 /* SizeViewController.m */; };
 		B527CE3716FDE56E00DAC626 /* SizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B527CE3616FDE56E00DAC626 /* SizeView.m */; };
 		B527CE3B16FDE5FE00DAC626 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527CE3A16FDE5FE00DAC626 /* QuartzCore.framework */; };
 		B527CE4716FE020E00DAC626 /* take_picture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B527CE4216FE020E00DAC626 /* take_picture@2x.png */; };
@@ -47,8 +46,6 @@
 		B527CE2D16FDE52E00DAC626 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		B527CE2F16FDE54600DAC626 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
 		B527CE3016FDE54600DAC626 /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
-		B527CE3216FDE55A00DAC626 /* SizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeViewController.h; sourceTree = "<group>"; };
-		B527CE3316FDE55A00DAC626 /* SizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeViewController.m; sourceTree = "<group>"; };
 		B527CE3516FDE56E00DAC626 /* SizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeView.h; sourceTree = "<group>"; };
 		B527CE3616FDE56E00DAC626 /* SizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeView.m; sourceTree = "<group>"; };
 		B527CE3A16FDE5FE00DAC626 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -114,8 +111,6 @@
 				B527CE2D16FDE52E00DAC626 /* CameraViewController.m */,
 				B527CE2F16FDE54600DAC626 /* OverlayView.h */,
 				B527CE3016FDE54600DAC626 /* OverlayView.m */,
-				B527CE3216FDE55A00DAC626 /* SizeViewController.h */,
-				B527CE3316FDE55A00DAC626 /* SizeViewController.m */,
 				B527CE3516FDE56E00DAC626 /* SizeView.h */,
 				B527CE3616FDE56E00DAC626 /* SizeView.m */,
 				B527CE1616FDE50800DAC626 /* Supporting Files */,
@@ -216,7 +211,6 @@
 				B527CE2016FDE50800DAC626 /* AppDelegate.m in Sources */,
 				B527CE2E16FDE52E00DAC626 /* CameraViewController.m in Sources */,
 				B527CE3116FDE54600DAC626 /* OverlayView.m in Sources */,
-				B527CE3416FDE55A00DAC626 /* SizeViewController.m in Sources */,
 				B527CE3716FDE56E00DAC626 /* SizeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +328,7 @@
 				B527CE2B16FDE50800DAC626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

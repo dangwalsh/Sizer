@@ -8,11 +8,12 @@
 
 #import "CameraViewController.h"
 #import "OverlayView.h"
-#import "SizeViewController.h"
+#import "SizeView.h"
 
 @interface CameraViewController () {
-    SizeViewController *sizeController;
+    //SizeViewController *sizeController;
     OverlayView *overlay;
+    SizeView *sizeView;
     BOOL didCancel;
 }
 
@@ -165,7 +166,7 @@
     }
 }
 
-- (void) hideCamera
+- (void) sizeImage
 {
     /*
     void (^presSize)(void);
@@ -177,7 +178,9 @@
     [self dismissViewControllerAnimated:YES completion:presSize];
     */
     
-    self.sizeView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    sizeView = [[SizeView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    sizeView.delegate = self;
+    /*
     self.sizeView.opaque = NO;
     self.sizeView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
     
@@ -247,42 +250,66 @@
     self.custom.maximumTrackTintColor = [UIColor clearColor];
     self.custom.opaque = NO;
     UITapGestureRecognizer *customTap = [[UITapGestureRecognizer alloc]
-                                        initWithTarget:self action:@selector(processImage:)];
+                                        initWithTarget:self action:@selector(makeCustom:)];
     [self.custom addGestureRecognizer:customTap];
     [self.sizeView addSubview:self.custom];
-    
-    [self.view addSubview:self.sizeView];
-    /*[UIView transitionFromView:self.view
-                        toView:self.sizeView
-                      duration:2.25
-                       options:UIViewAnimationOptionTransitionFlipFromRight
-                    completion:NULL];*/
+     */
+    // create the sizeView offscreen initially
+    sizeView.center = CGPointMake(-sizeView.bounds.size.width / 2, sizeView.bounds.size.height / 2);
+    [self.view addSubview:sizeView];
+    [UIView animateWithDuration:0.125
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{ sizeView.center = CGPointMake(sizeView.bounds.size.width / 2, sizeView.bounds.size.height / 2); }
+                     completion:NULL
+     ];
 }
 
-- (void) makeSmall: (id)sender
+- (void) makeSmall//: (id)sender
 {
     UIImage *newImage = [self imageWithImage:thisImage  scaledToSize:CGSizeMake(640, 480)];
     UIImageWriteToSavedPhotosAlbum (newImage, nil, nil , nil);
-    [self.sizeView removeFromSuperview];
+    
+    [self slideOut];
 }
 
-- (void) makeMedium: (id)sender
+- (void) makeMedium//: (id)sender
 {
     UIImage *newImage = [self imageWithImage:thisImage  scaledToSize:CGSizeMake(1024, 768)];
     UIImageWriteToSavedPhotosAlbum (newImage, nil, nil , nil);
-    [self.sizeView removeFromSuperview];
+    [self slideOut];
 }
 
-- (void) makeLarge: (id)sender
+- (void) makeLarge//: (id)sender
 {
     UIImage *newImage = [self imageWithImage:thisImage  scaledToSize:CGSizeMake(1920, 1080)];
     UIImageWriteToSavedPhotosAlbum (newImage, nil, nil , nil);
-    [self.sizeView removeFromSuperview];
+    [self slideOut];
+}
+
+- (void) makeCustom//: (id)sender // add args to receive height and width
+{
+    //UIImage *newImage = [self imageWithImage:thisImage  scaledToSize:CGSizeMake(1920, 1080)];
+    //UIImageWriteToSavedPhotosAlbum (newImage, nil, nil , nil);
+    [self slideOut];
+    
+}
+
+- (void) slideOut
+{
+    [UIView animateWithDuration:0.125
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{ sizeView.center = CGPointMake(-sizeView.bounds.size.width / 2, sizeView.bounds.size.height / 2); }
+                     completion:NULL
+     ];
+    //[sizeView removeFromSuperview];
 }
 
 - (void) takePicture
 {
     [self.picker takePicture];
+    [self sizeImage];
 }
 
 - (void) changeFlash:(id)sender

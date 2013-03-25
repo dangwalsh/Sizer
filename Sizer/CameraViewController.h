@@ -30,8 +30,12 @@
 - (void) changeCamera;
 - (void) showLibrary;
 - (void) showCamera;
-- (void) hideCamera;
+- (void) sizeImage;
 - (void) takePicture;
 - (UIImage*)imageWithImage:(UIImage*)sourceImage scaledToSize:(CGSize)newSize;
+- (void) makeSmall;
+- (void) makeMedium;
+- (void) makeLarge;
+- (void) makeCustom;
 
 @end

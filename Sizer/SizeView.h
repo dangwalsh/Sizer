@@ -7,16 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SizeViewController.h"
+#import "CameraViewController.h"
 
 @interface SizeView : UIView
 
-@property (nonatomic, weak) SizeViewController *delegate;
-@property (nonatomic, strong) UIButton *small;
-@property (nonatomic, strong) UIButton *medium;
-@property (nonatomic, strong) UIButton *large;
-
-- (id) initWithFrame:(CGRect)frame controller:(SizeViewController *)c;
-- (void) processImage:(id)sender;
+@property (nonatomic, weak) CameraViewController *delegate;
+@property (nonatomic, strong) UILabel *small;
+@property (nonatomic, strong) UILabel *medium;
+@property (nonatomic, strong) UILabel *large;
+@property (nonatomic, strong) UISlider *custom;
 
 @end
