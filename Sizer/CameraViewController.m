@@ -51,7 +51,7 @@
             
         } else {
             [self performSelectorOnMainThread:@selector(showCamera) withObject:nil waitUntilDone:NO];
-            ALAsset *lastPicture = (ALAsset *)[assets lastObject];
+            lastPicture = (ALAsset *)[assets lastObject];
             [overlay.lastPicture setImage:[UIImage imageWithCGImage:[lastPicture thumbnail]] forState:UIControlStateNormal];
         }
     };
@@ -75,6 +75,7 @@
 - (void) imagePickerController:(UIImagePickerController *)aPicker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *aImage = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
+    thisImage = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
     
     if (aPicker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         UIImageWriteToSavedPhotosAlbum (aImage, nil, nil , nil);
@@ -166,6 +167,7 @@
 
 - (void) hideCamera
 {
+    /*
     void (^presSize)(void);
     presSize = ^(void) {
         sizeController = [[SizeViewController alloc]initWithNibName:nil bundle:nil];
@@ -173,11 +175,114 @@
         [self presentViewController:sizeController animated:YES completion:nil];
     };
     [self dismissViewControllerAnimated:YES completion:presSize];
+    */
+    
+    self.sizeView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.sizeView.opaque = NO;
+    self.sizeView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
+    
+    CGRect frame = [UIScreen mainScreen].applicationFrame;
+    CGSize s = CGSizeMake(150, 50);
+    CGRect f1 = CGRectMake((frame.size.width - s.width) / 2,
+                           (frame.size.height - s.height) / 6,
+                           s.width,
+                           s.height);
+    self.small = [[UILabel alloc] init];    
+    self.small.text = @"Small";
+    self.small.textAlignment = UITextAlignmentCenter;
+    self.small.textColor = [UIColor whiteColor];
+    self.small.backgroundColor = [UIColor clearColor];
+    self.small.opaque = NO;
+    self.small.userInteractionEnabled = YES;
+    UITapGestureRecognizer *smallTap = [[UITapGestureRecognizer alloc]
+                                        initWithTarget:self action:@selector(makeSmall:)];
+    [self.small addGestureRecognizer:smallTap];    
+    self.small.frame = f1;
+    [self.sizeView addSubview:self.small];
+    CGRect f2 = CGRectMake((frame.size.width - s.width) / 2,
+                           ((frame.size.height - s.height) / 6) * 2,
+                           s.width,
+                           s.height);
+    self.medium = [[UILabel alloc] init];
+    self.medium.text = @"Medium";
+    self.medium.textAlignment = UITextAlignmentCenter;
+    self.medium.textColor = [UIColor whiteColor];
+    self.medium.backgroundColor = [UIColor clearColor];
+    self.medium.opaque = NO;
+    self.medium.userInteractionEnabled = YES;
+    self.medium.frame = f2;
+    self.medium.userInteractionEnabled = YES;
+    UITapGestureRecognizer *mediumTap = [[UITapGestureRecognizer alloc]
+                                        initWithTarget:self action:@selector(makeMedium:)];
+    [self.medium addGestureRecognizer:mediumTap];
+    [self.sizeView addSubview:self.medium];
+    CGRect f3 = CGRectMake((frame.size.width - s.width) / 2,
+                           ((frame.size.height - s.height) / 6) * 3,
+                           s.width,
+                           s.height);
+    self.large = [[UILabel alloc] init];
+    self.large.text = @"Large";
+    self.large.textAlignment = UITextAlignmentCenter;
+    self.large.textColor = [UIColor whiteColor];
+    self.large.backgroundColor = [UIColor clearColor];
+    self.large.opaque = NO;
+    self.large.userInteractionEnabled = YES;
+    self.large.frame = f3;
+    self.large.userInteractionEnabled = YES;
+    UITapGestureRecognizer *largeTap = [[UITapGestureRecognizer alloc]
+                                        initWithTarget:self action:@selector(makeLarge:)];
+    [self.large addGestureRecognizer:largeTap];
+    [self.sizeView addSubview:self.large];
+    CGRect f4 = CGRectMake((frame.size.width - s.width) / 2,
+                           ((frame.size.height - s.height) / 6) * 4,
+                           s.width,
+                           s.height);
+    self.custom = [[UISlider alloc]initWithFrame:f4];
+    self.custom.minimumValue = 1;
+    self.custom.maximumValue = 99;
+    self.custom.value = (self.custom.maximumValue + self.custom.minimumValue) / 2;
+    self.custom.continuous = YES;
+    self.custom.backgroundColor = [UIColor clearColor];
+    self.custom.minimumTrackTintColor = [UIColor whiteColor];
+    self.custom.maximumTrackTintColor = [UIColor clearColor];
+    self.custom.opaque = NO;
+    UITapGestureRecognizer *customTap = [[UITapGestureRecognizer alloc]
+                                        initWithTarget:self action:@selector(processImage:)];
+    [self.custom addGestureRecognizer:customTap];
+    [self.sizeView addSubview:self.custom];
+    
+    [self.view addSubview:self.sizeView];
+    /*[UIView transitionFromView:self.view
+                        toView:self.sizeView
+                      duration:2.25
+                       options:UIViewAnimationOptionTransitionFlipFromRight
+                    completion:NULL];*/
+}
+
+- (void) makeSmall: (id)sender
+{
+    UIImage *newImage = [self imageWithImage:thisImage  scaledToSize:CGSizeMake(640, 480)];
+    UIImageWriteToSavedPhotosAlbum (newImage, nil, nil , nil);
+    [self.sizeView removeFromSuperview];
+}
+
+- (void) makeMedium: (id)sender
+{
+    UIImage *newImage = [self imageWithImage:thisImage  scaledToSize:CGSizeMake(1024, 768)];
+    UIImageWriteToSavedPhotosAlbum (newImage, nil, nil , nil);
+    [self.sizeView removeFromSuperview];
+}
+
+- (void) makeLarge: (id)sender
+{
+    UIImage *newImage = [self imageWithImage:thisImage  scaledToSize:CGSizeMake(1920, 1080)];
+    UIImageWriteToSavedPhotosAlbum (newImage, nil, nil , nil);
+    [self.sizeView removeFromSuperview];
 }
 
 - (void) takePicture
 {
-    [_picker takePicture];
+    [self.picker takePicture];
 }
 
 - (void) changeFlash:(id)sender
@@ -214,6 +319,54 @@
 - (void)showLibrary
 {
     self.picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+}
+
+- (UIImage*)imageWithImage:(UIImage*)sourceImage scaledToSize:(CGSize)newSize
+{
+    CGFloat targetWidth = newSize.width;
+    CGFloat targetHeight = newSize.height;
+    
+    CGImageRef imageRef = [sourceImage CGImage];
+    CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(imageRef);
+    CGColorSpaceRef colorSpaceInfo = CGImageGetColorSpace(imageRef);
+    
+    if (bitmapInfo == kCGImageAlphaNone) {
+        bitmapInfo = kCGImageAlphaNoneSkipLast;
+    }
+    
+    CGContextRef bitmap;
+    
+    if (sourceImage.imageOrientation == UIImageOrientationUp || sourceImage.imageOrientation == UIImageOrientationDown) {
+        bitmap = CGBitmapContextCreate(NULL, targetWidth, targetHeight, CGImageGetBitsPerComponent(imageRef), CGImageGetBytesPerRow(imageRef), colorSpaceInfo, bitmapInfo);
+        
+    } else {
+        bitmap = CGBitmapContextCreate(NULL, targetHeight, targetWidth, CGImageGetBitsPerComponent(imageRef), CGImageGetBytesPerRow(imageRef), colorSpaceInfo, bitmapInfo);
+        
+    }
+    
+    if (sourceImage.imageOrientation == UIImageOrientationLeft) {
+        CGContextRotateCTM (bitmap, M_PI_2); // + 90 degrees
+        CGContextTranslateCTM (bitmap, 0, -targetHeight);
+        
+    } else if (sourceImage.imageOrientation == UIImageOrientationRight) {
+        CGContextRotateCTM (bitmap, -M_PI_2); // - 90 degrees
+        CGContextTranslateCTM (bitmap, -targetWidth, 0);
+        
+    } else if (sourceImage.imageOrientation == UIImageOrientationUp) {
+        // NOTHING
+    } else if (sourceImage.imageOrientation == UIImageOrientationDown) {
+        CGContextTranslateCTM (bitmap, targetWidth, targetHeight);
+        CGContextRotateCTM (bitmap, -M_PI); // - 180 degrees
+    }
+    
+    CGContextDrawImage(bitmap, CGRectMake(0, 0, targetWidth, targetHeight), imageRef);
+    CGImageRef ref = CGBitmapContextCreateImage(bitmap);
+    UIImage* newImage = [UIImage imageWithCGImage:ref];
+    
+    CGContextRelease(bitmap);
+    CGImageRelease(ref);
+    
+    return newImage; 
 }
 
 @end

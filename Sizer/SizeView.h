@@ -11,11 +11,12 @@
 
 @interface SizeView : UIView
 
-- (id) initWithFrame: (CGRect)frame controller: (SizeViewController *)c;
-
 @property (nonatomic, weak) SizeViewController *delegate;
 @property (nonatomic, strong) UIButton *small;
 @property (nonatomic, strong) UIButton *medium;
 @property (nonatomic, strong) UIButton *large;
+
+- (id) initWithFrame:(CGRect)frame controller:(SizeViewController *)c;
+- (void) processImage:(id)sender;
 
 @end

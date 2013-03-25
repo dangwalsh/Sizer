@@ -8,6 +8,7 @@
 
 #import "OverlayView.h"
 #import "SizeViewController.h"
+#import "SizeView.h"
 
 @implementation OverlayView
 
@@ -87,6 +88,8 @@
     self.pictureButton.enabled = NO;
     [self.delegate takePicture];
     [self.delegate hideCamera];
+    //SizeView *sv = [[SizeView alloc] initWithFrame:self.bounds];
+    //[self addSubview:sv];
 }
 
 - (void)setFlash:(id)sender

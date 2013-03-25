@@ -17,6 +17,7 @@
         // Initialization code
         self.backgroundColor = [UIColor blueColor];
         self.userInteractionEnabled = YES;
+        self.opaque = NO;
         self.delegate = c;
         
         CGSize s = CGSizeMake(100, 50);
@@ -26,6 +27,7 @@
                                s.height);
         self.small = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         self.small.frame = f1;
+        [self.small addTarget:self action:@selector(processImage:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.small];
         CGRect f2 = CGRectMake((frame.size.width - s.width) / 2,
                                ((frame.size.height - s.height) / 4) * 2,
@@ -33,6 +35,7 @@
                                s.height);
         self.medium = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         self.medium.frame = f2;
+        [self.medium addTarget:self action:@selector(processImage:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.medium];
         CGRect f3 = CGRectMake((frame.size.width - s.width) / 2,
                                ((frame.size.height - s.height) / 4) * 3,
@@ -40,12 +43,13 @@
                                s.height);
         self.large = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         self.large.frame = f3;
+        [self.large addTarget:self action:@selector(processImage:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.large];
     }
     return self;
 }
 
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void) processImage:(id)sender
 {
     [self.delegate dismiss];
 }
