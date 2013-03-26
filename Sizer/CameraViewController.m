@@ -168,92 +168,9 @@
 
 - (void) sizeImage
 {
-    /*
-    void (^presSize)(void);
-    presSize = ^(void) {
-        sizeController = [[SizeViewController alloc]initWithNibName:nil bundle:nil];
-        sizeController.delegate = self;
-        [self presentViewController:sizeController animated:YES completion:nil];
-    };
-    [self dismissViewControllerAnimated:YES completion:presSize];
-    */
-    
     sizeView = [[SizeView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     sizeView.delegate = self;
-    /*
-    self.sizeView.opaque = NO;
-    self.sizeView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
-    
-    CGRect frame = [UIScreen mainScreen].applicationFrame;
-    CGSize s = CGSizeMake(150, 50);
-    CGRect f1 = CGRectMake((frame.size.width - s.width) / 2,
-                           (frame.size.height - s.height) / 6,
-                           s.width,
-                           s.height);
-    self.small = [[UILabel alloc] init];    
-    self.small.text = @"Small";
-    self.small.textAlignment = UITextAlignmentCenter;
-    self.small.textColor = [UIColor whiteColor];
-    self.small.backgroundColor = [UIColor clearColor];
-    self.small.opaque = NO;
-    self.small.userInteractionEnabled = YES;
-    UITapGestureRecognizer *smallTap = [[UITapGestureRecognizer alloc]
-                                        initWithTarget:self action:@selector(makeSmall:)];
-    [self.small addGestureRecognizer:smallTap];    
-    self.small.frame = f1;
-    [self.sizeView addSubview:self.small];
-    CGRect f2 = CGRectMake((frame.size.width - s.width) / 2,
-                           ((frame.size.height - s.height) / 6) * 2,
-                           s.width,
-                           s.height);
-    self.medium = [[UILabel alloc] init];
-    self.medium.text = @"Medium";
-    self.medium.textAlignment = UITextAlignmentCenter;
-    self.medium.textColor = [UIColor whiteColor];
-    self.medium.backgroundColor = [UIColor clearColor];
-    self.medium.opaque = NO;
-    self.medium.userInteractionEnabled = YES;
-    self.medium.frame = f2;
-    self.medium.userInteractionEnabled = YES;
-    UITapGestureRecognizer *mediumTap = [[UITapGestureRecognizer alloc]
-                                        initWithTarget:self action:@selector(makeMedium:)];
-    [self.medium addGestureRecognizer:mediumTap];
-    [self.sizeView addSubview:self.medium];
-    CGRect f3 = CGRectMake((frame.size.width - s.width) / 2,
-                           ((frame.size.height - s.height) / 6) * 3,
-                           s.width,
-                           s.height);
-    self.large = [[UILabel alloc] init];
-    self.large.text = @"Large";
-    self.large.textAlignment = UITextAlignmentCenter;
-    self.large.textColor = [UIColor whiteColor];
-    self.large.backgroundColor = [UIColor clearColor];
-    self.large.opaque = NO;
-    self.large.userInteractionEnabled = YES;
-    self.large.frame = f3;
-    self.large.userInteractionEnabled = YES;
-    UITapGestureRecognizer *largeTap = [[UITapGestureRecognizer alloc]
-                                        initWithTarget:self action:@selector(makeLarge:)];
-    [self.large addGestureRecognizer:largeTap];
-    [self.sizeView addSubview:self.large];
-    CGRect f4 = CGRectMake((frame.size.width - s.width) / 2,
-                           ((frame.size.height - s.height) / 6) * 4,
-                           s.width,
-                           s.height);
-    self.custom = [[UISlider alloc]initWithFrame:f4];
-    self.custom.minimumValue = 1;
-    self.custom.maximumValue = 99;
-    self.custom.value = (self.custom.maximumValue + self.custom.minimumValue) / 2;
-    self.custom.continuous = YES;
-    self.custom.backgroundColor = [UIColor clearColor];
-    self.custom.minimumTrackTintColor = [UIColor whiteColor];
-    self.custom.maximumTrackTintColor = [UIColor clearColor];
-    self.custom.opaque = NO;
-    UITapGestureRecognizer *customTap = [[UITapGestureRecognizer alloc]
-                                        initWithTarget:self action:@selector(makeCustom:)];
-    [self.custom addGestureRecognizer:customTap];
-    [self.sizeView addSubview:self.custom];
-     */
+
     // create the sizeView offscreen initially
     sizeView.center = CGPointMake(-sizeView.bounds.size.width / 2, sizeView.bounds.size.height / 2);
     [self.view addSubview:sizeView];
@@ -287,7 +204,7 @@
     [self slideOut];
 }
 
-- (void) makeCustom//: (id)sender // add args to receive height and width
+- (void) makeCustom//: (id)sender // TODO: add args to receive height and width
 {
     //UIImage *newImage = [self imageWithImage:thisImage  scaledToSize:CGSizeMake(1920, 1080)];
     //UIImageWriteToSavedPhotosAlbum (newImage, nil, nil , nil);
@@ -303,6 +220,7 @@
                      animations:^{ sizeView.center = CGPointMake(-sizeView.bounds.size.width / 2, sizeView.bounds.size.height / 2); }
                      completion:NULL
      ];
+    // TODO: decide if we want to destroy the view or just hide it
     //[sizeView removeFromSuperview];
 }
 

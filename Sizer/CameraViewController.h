@@ -19,7 +19,6 @@
 }
 
 @property (nonatomic, strong) UIImagePickerController *picker;
-@property (nonatomic, strong) UIView *sizeView;
 @property (nonatomic, strong) UILabel *small;
 @property (nonatomic, strong) UILabel *medium;
 @property (nonatomic, strong) UILabel *large;

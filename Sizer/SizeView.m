@@ -15,11 +15,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        //self.sizeView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         self.opaque = NO;
         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
-        
-        //CGRect frame = [UIScreen mainScreen].applicationFrame;
+
         CGSize s = CGSizeMake(150, 50);
         
         CGRect f1 = CGRectMake((frame.size.width - s.width) / 2,
@@ -28,7 +26,7 @@
                                s.height);
         self.small = [[UILabel alloc] init];
         self.small.text = @"Small";
-        self.small.textAlignment = UITextAlignmentCenter;
+        self.small.textAlignment = kCTTextAlignmentCenter;
         self.small.textColor = [UIColor whiteColor];
         self.small.backgroundColor = [UIColor clearColor];
         self.small.opaque = NO;
@@ -44,7 +42,7 @@
                                s.height);
         self.medium = [[UILabel alloc] init];
         self.medium.text = @"Medium";
-        self.medium.textAlignment = UITextAlignmentCenter;
+        self.medium.textAlignment = kCTTextAlignmentCenter;
         self.medium.textColor = [UIColor whiteColor];
         self.medium.backgroundColor = [UIColor clearColor];
         self.medium.opaque = NO;
@@ -61,7 +59,7 @@
                                s.height);
         self.large = [[UILabel alloc] init];
         self.large.text = @"Large";
-        self.large.textAlignment = UITextAlignmentCenter;
+        self.large.textAlignment = kCTTextAlignmentCenter;
         self.large.textColor = [UIColor whiteColor];
         self.large.backgroundColor = [UIColor clearColor];
         self.large.opaque = NO;
