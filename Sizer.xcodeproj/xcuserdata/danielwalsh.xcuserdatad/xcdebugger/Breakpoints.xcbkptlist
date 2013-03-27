@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Sizer/CameraViewController.m"
-         timestampString = "385907343.659757"
+         timestampString = "386038886.311886"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "270"
-         endingLineNumber = "270"
+         startingLineNumber = "187"
+         endingLineNumber = "187"
          landmarkName = "-makeSmall"
          landmarkType = "5">
       </FileBreakpoint>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50440101702674700016530 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B504400F1702674700016530 /* DropboxSDK.framework */; };
+		B50440121702676100016530 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50440111702676100016530 /* Security.framework */; };
 		B527CE1016FDE50800DAC626 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527CE0F16FDE50800DAC626 /* UIKit.framework */; };
 		B527CE1216FDE50800DAC626 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527CE1116FDE50800DAC626 /* Foundation.framework */; };
 		B527CE1416FDE50800DAC626 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527CE1316FDE50800DAC626 /* CoreGraphics.framework */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B504400F1702674700016530 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		B50440111702676100016530 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B527CE0C16FDE50800DAC626 /* Sizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B527CE0F16FDE50800DAC626 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B527CE1116FDE50800DAC626 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,11 +66,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50440121702676100016530 /* Security.framework in Frameworks */,
 				B527CE5116FE059000DAC626 /* AssetsLibrary.framework in Frameworks */,
 				B527CE3B16FDE5FE00DAC626 /* QuartzCore.framework in Frameworks */,
 				B527CE1016FDE50800DAC626 /* UIKit.framework in Frameworks */,
 				B527CE1216FDE50800DAC626 /* Foundation.framework in Frameworks */,
 				B527CE1416FDE50800DAC626 /* CoreGraphics.framework in Frameworks */,
+				B50440101702674700016530 /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +99,8 @@
 		B527CE0E16FDE50800DAC626 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B50440111702676100016530 /* Security.framework */,
+				B504400F1702674700016530 /* DropboxSDK.framework */,
 				B527CE5016FE059000DAC626 /* AssetsLibrary.framework */,
 				B527CE3A16FDE5FE00DAC626 /* QuartzCore.framework */,
 				B527CE0F16FDE50800DAC626 /* UIKit.framework */,
@@ -290,6 +298,11 @@
 		B527CE2A16FDE50800DAC626 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Libraries/dropbox-ios-sdk-1.3.3\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sizer/Sizer-Prefix.pch";
 				INFOPLIST_FILE = "Sizer/Sizer-Info.plist";
@@ -301,6 +314,11 @@
 		B527CE2B16FDE50800DAC626 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Libraries/dropbox-ios-sdk-1.3.3\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sizer/Sizer-Prefix.pch";
 				INFOPLIST_FILE = "Sizer/Sizer-Info.plist";
