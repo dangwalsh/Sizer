@@ -70,6 +70,9 @@
                          failureBlock: ^(NSError *error) {
                              NSLog(@"Failure");
                          }];
+    
+    dropbox = [[DropboxDelegate alloc] init];
+    dropbox.delegate = self;
 
 }
 
@@ -186,7 +189,7 @@
 {
     UIImage *newImage = [self imageWithImage:thisImage  scaledToSize:CGSizeMake(640, 480)];
     UIImageWriteToSavedPhotosAlbum (newImage, nil, nil , nil);
-    
+    [self createFileWith:newImage];
     [self slideOut];
 }
 
@@ -194,6 +197,7 @@
 {
     UIImage *newImage = [self imageWithImage:thisImage  scaledToSize:CGSizeMake(1024, 768)];
     UIImageWriteToSavedPhotosAlbum (newImage, nil, nil , nil);
+    [self createFileWith:newImage];
     [self slideOut];
 }
 
@@ -201,6 +205,7 @@
 {
     UIImage *newImage = [self imageWithImage:thisImage  scaledToSize:CGSizeMake(1920, 1080)];
     UIImageWriteToSavedPhotosAlbum (newImage, nil, nil , nil);
+    [self createFileWith:newImage];
     [self slideOut];
 }
 
@@ -312,6 +317,28 @@
     CGImageRelease(ref);
     
     return newImage; 
+}
+
+- (void) createFileWith:(UIImage *)image
+{
+    NSData* imageData = UIImagePNGRepresentation(image);
+    
+    // Give a name to the file
+    NSString* imageName = @"MyImage.png";
+    
+    // Now, we have to find the documents directory so we can save it
+    // Note that you might want to save it elsewhere, like the cache directory,
+    // or something similar.
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentsDirectory = [paths objectAtIndex:0];
+    
+    // Now we get the full path to the file
+    NSString* fullPathToFile = [documentsDirectory stringByAppendingPathComponent:imageName];
+    
+    // and then we write it out
+    [imageData writeToFile:fullPathToFile atomically:NO];
+    [dropbox uploadFile:imageName withPath:fullPathToFile];
+    [dropbox listFiles];
 }
 
 @end

@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B50440101702674700016530 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B504400F1702674700016530 /* DropboxSDK.framework */; };
 		B50440121702676100016530 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50440111702676100016530 /* Security.framework */; };
+		B51C882217031CF5008D411B /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B51C882117031CF5008D411B /* DropboxSDK.framework */; };
+		B51C882817031E67008D411B /* DropboxDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C882717031E67008D411B /* DropboxDelegate.m */; };
 		B527CE1016FDE50800DAC626 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527CE0F16FDE50800DAC626 /* UIKit.framework */; };
 		B527CE1216FDE50800DAC626 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527CE1116FDE50800DAC626 /* Foundation.framework */; };
 		B527CE1416FDE50800DAC626 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B527CE1316FDE50800DAC626 /* CoreGraphics.framework */; };
@@ -31,8 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B504400F1702674700016530 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		B50440111702676100016530 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B51C882117031CF5008D411B /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		B51C882617031E67008D411B /* DropboxDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxDelegate.h; sourceTree = "<group>"; };
+		B51C882717031E67008D411B /* DropboxDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxDelegate.m; sourceTree = "<group>"; };
 		B527CE0C16FDE50800DAC626 /* Sizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B527CE0F16FDE50800DAC626 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B527CE1116FDE50800DAC626 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -72,7 +75,7 @@
 				B527CE1016FDE50800DAC626 /* UIKit.framework in Frameworks */,
 				B527CE1216FDE50800DAC626 /* Foundation.framework in Frameworks */,
 				B527CE1416FDE50800DAC626 /* CoreGraphics.framework in Frameworks */,
-				B50440101702674700016530 /* DropboxSDK.framework in Frameworks */,
+				B51C882217031CF5008D411B /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,8 +102,8 @@
 		B527CE0E16FDE50800DAC626 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B51C882117031CF5008D411B /* DropboxSDK.framework */,
 				B50440111702676100016530 /* Security.framework */,
-				B504400F1702674700016530 /* DropboxSDK.framework */,
 				B527CE5016FE059000DAC626 /* AssetsLibrary.framework */,
 				B527CE3A16FDE5FE00DAC626 /* QuartzCore.framework */,
 				B527CE0F16FDE50800DAC626 /* UIKit.framework */,
@@ -113,6 +116,8 @@
 		B527CE1516FDE50800DAC626 /* Sizer */ = {
 			isa = PBXGroup;
 			children = (
+				B51C882617031E67008D411B /* DropboxDelegate.h */,
+				B51C882717031E67008D411B /* DropboxDelegate.m */,
 				B527CE1E16FDE50800DAC626 /* AppDelegate.h */,
 				B527CE1F16FDE50800DAC626 /* AppDelegate.m */,
 				B527CE2C16FDE52E00DAC626 /* CameraViewController.h */,
@@ -220,6 +225,7 @@
 				B527CE2E16FDE52E00DAC626 /* CameraViewController.m in Sources */,
 				B527CE3116FDE54600DAC626 /* OverlayView.m in Sources */,
 				B527CE3716FDE56E00DAC626 /* SizeView.m in Sources */,
+				B51C882817031E67008D411B /* DropboxDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

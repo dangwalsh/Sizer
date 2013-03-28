@@ -26,7 +26,7 @@
                                s.height);
         self.small = [[UILabel alloc] init];
         self.small.text = @"Small";
-        self.small.textAlignment = kCTTextAlignmentCenter;
+        self.small.textAlignment = UITextAlignmentCenter;
         self.small.textColor = [UIColor whiteColor];
         self.small.backgroundColor = [UIColor clearColor];
         self.small.opaque = NO;
@@ -42,7 +42,7 @@
                                s.height);
         self.medium = [[UILabel alloc] init];
         self.medium.text = @"Medium";
-        self.medium.textAlignment = kCTTextAlignmentCenter;
+        self.medium.textAlignment = UITextAlignmentCenter;
         self.medium.textColor = [UIColor whiteColor];
         self.medium.backgroundColor = [UIColor clearColor];
         self.medium.opaque = NO;
@@ -59,7 +59,7 @@
                                s.height);
         self.large = [[UILabel alloc] init];
         self.large.text = @"Large";
-        self.large.textAlignment = kCTTextAlignmentCenter;
+        self.large.textAlignment = UITextAlignmentCenter;
         self.large.textColor = [UIColor whiteColor];
         self.large.backgroundColor = [UIColor clearColor];
         self.large.opaque = NO;

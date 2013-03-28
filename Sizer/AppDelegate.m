@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "DropboxDelegate.h"
 #import "CameraViewController.h"
-#import <DropboxSDK/DropboxSDK.h>
+
 
 @implementation AppDelegate
 
@@ -18,29 +19,13 @@
 	// Override point for customization after application launch.
 	self.window.rootViewController = [[CameraViewController alloc] initWithNibName: nil bundle: nil];
 	[self.window makeKeyAndVisible];
-    
-    // initialize dropbox access
-    DBSession* dbSession = [[DBSession alloc] initWithAppKey:@"2hjagbwte1l77cu"
-                                                   appSecret:@"pn2z47mxtspkvk1"
-                                                        root:kDBRootAppFolder];
-    [DBSession setSharedSession:dbSession];
-    if (![[DBSession sharedSession] isLinked]) {
-        [[DBSession sharedSession] linkFromController:self.window.rootViewController];
-    }
-    
+    /*
+    dropbox = [[DropboxDelegate alloc] init];
+    dropbox.delegate = self;
+    [dropbox uploadFile];
+    [dropbox listFiles];
+    */
     return YES;
-}
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    if ([[DBSession sharedSession] handleOpenURL:url]) {
-        if ([[DBSession sharedSession] isLinked]) {
-            NSLog(@"App linked successfully!");
-            // At this point you can start making API calls
-        }
-        return YES;
-    }
-    // Add whatever other url handling code your app requires here
-    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

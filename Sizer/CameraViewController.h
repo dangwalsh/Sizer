@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "DropboxDelegate.h"
 //#import <QuartzCore/QuartzCore.h>
 
 @interface CameraViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
@@ -16,6 +17,7 @@
     NSMutableArray *assets;
     ALAsset *lastPicture;
     UIImage *thisImage;
+    DropboxDelegate *dropbox;
 }
 
 @property (nonatomic, strong) UIImagePickerController *picker;

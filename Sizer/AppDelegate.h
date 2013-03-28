@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <DropboxSDK/DropboxSDK.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@class DropboxDelegate;
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    DropboxDelegate *dropbox;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
